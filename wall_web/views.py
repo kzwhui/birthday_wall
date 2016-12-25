@@ -39,7 +39,7 @@ def add_wish(request):
         return JsonResponse(ret_root)
 
     try:
-        obj = TWishInfo.objects.create(name = name, wish_statement = wish_info.strip())
+        obj = TWishInfo.objects.create(name = name.strip(), wish_statement = wish_info.strip())
         tmp = {}
         tmp['name'] = obj.name
         tmp['wish'] = obj.wish_statement
