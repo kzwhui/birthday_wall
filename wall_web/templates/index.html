@@ -9,7 +9,10 @@
     <meta name="description" content="Source code generated using layoutit.com">
     <meta name="author" content="Waihui Zheng">
     <link href="/static/css/bootstrap.min.css" rel="stylesheet">
-    <link href="/static/css/style.css" rel="stylesheet"></head>
+    <link href="/static/css/style.css" rel="stylesheet">
+    <link href="/static/css/alert-bangtidy.css" rel="stylesheet">
+    <link href="/static/css/alert-blackgloss.css" rel="stylesheet">
+  </head>
 
   <body>
     <div class="container">
@@ -87,22 +90,35 @@
             setTimeout("get_wishes()", 3000)
         }
 
+        var add_wish_timeout = null;
         function add_wish() {
             var name = $("#name_input").val();
             var wish = $("#wish_info_input").val();
             var url = "/happy/add_wish?name=" + name + "&wish=" + wish;
+
+            add_wish_timeout = setTimeout(function() {
+                notifyError("网络出现异常，请稍后再试");
+                },
+                5000
+            )
+
             $.get(url, function(data, status) {
+                if (add_wish_timeout) {
+                    clearTimeout(add_wish_timeout);
+                    add_wish_timeout = null;
+                }
+
                 if (status != 'success') {
-                    alert('add fail');
+                    notifyError("网络出现异常，请稍后再试");
                     return;
                 }
 
                 if (data.ret != 0) {
-                    alert("add fail");
+                    notifyError("已经存在，请输入新语句");
                     return;
                 }
 
-                alert("add success");
+                notifySuc("祝福成功");
                 $("#name_input").val("");
                 $("#wish_info_input").val("");
             })
@@ -113,6 +129,7 @@
 
     <script src="/static/js/jquery.min.js"></script>
     <script src="/static/js/bootstrap.min.js"></script>
+    <script src="/static/js/bootstrap-notify.js"></script>
     <script src="/static/js/scripts.js"></script>
   </body>
 

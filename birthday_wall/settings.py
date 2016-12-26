@@ -134,19 +134,19 @@ LOGGING = {
             'level': 'INFO',
             'class': 'logging.FileHandler',
             'formatter': 'verbose',
-            'filename': '/Users/fantasic/Documents/cooder/birthday_wall/log/app.info.log',
+            'filename': '/home/zheng/birthday_wall/log/app.info.log',
         },
         'app_debug_file': {
             'level': 'DEBUG',
             'class': 'logging.FileHandler',
             'formatter': 'verbose',
-            'filename': '/Users/fantasic/Documents/cooder/birthday_wall/log/app.debug.log',
+            'filename': '/home/zheng/birthday_wall/log/app.debug.log',
         },
         'app_error_file': {
             'level': 'ERROR',
             'class': 'logging.FileHandler',
             'formatter': 'verbose',
-            'filename': '/Users/fantasic/Documents/cooder/birthday_wall/log/app.error.log',
+            'filename': '/home/zheng/birthday_wall/log/app.error.log',
         },
     },
     'loggers': {
