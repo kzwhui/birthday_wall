@@ -14,7 +14,7 @@ import datetime
 class TWishInfo(models.Model):
     id = models.BigIntegerField(primary_key=True)
     name = models.CharField(max_length=45)
-    wish_statement = models.CharField(max_length=256)
+    wish_statement = models.CharField(max_length=128)
     mtime = models.DateTimeField(blank=True, auto_now=True)
     ctime = models.DateTimeField(blank=True, auto_now_add=True)
 
