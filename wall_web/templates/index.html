@@ -37,16 +37,13 @@
               </tr>
             </thead>
             <tbody id="wish_info">
+              {% for wish in data %}
               <tr class="warning text-left">
-                <td>2016-12-25 08:08:08</td>
-                <td>呆瓜</td>
-                <td>祝爷爷奶奶生日快乐，寿比南山</td>
+                  <td>{{wish.time}}</td>
+                  <td>{{wish.name}}</td>
+                  <td>{{wish.wish_statement}}</td>
               </tr>
-              <tr class="warning text-left">
-                <td>2016-12-25 08:08:08</td>
-                <td>呆瓜</td>
-                <td>祝爷爷奶奶生日快乐，寿比南山</td>
-              </tr>
+              {% endfor %}
             </tbody>
           </table>
           <form role="form">

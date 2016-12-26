@@ -7,7 +7,16 @@ from models import *
 
 # Create your views here.
 def index(request):
-    return render(request, 'index.html')
+    wish_infos = TWishInfo.objects.order_by('-id')[:10]
+    wishes = []
+    for wish in wish_infos:
+        tmp = {}
+        tmp['time'] = wish.ctime.strftime("%H:%I:%S")
+        tmp['name'] = wish.name
+        tmp['wish_statement'] = wish.wish_statement
+        wishes.append(tmp)
+    
+    return render(request, 'index.html', {'data' : wishes})
 
 def get_wishes(request):
     ret_root = {'data' : '', 'msg' : 'get fail', 'ret' : -1}
