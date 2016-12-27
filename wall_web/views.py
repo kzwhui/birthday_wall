@@ -16,7 +16,7 @@ def index(request):
         tmp['wish_statement'] = wish.wish_statement
         wishes.append(tmp)
     
-    return render(request, 'index.html', {'data' : wishes})
+    return render(request, 'wall_web/index.html', {'data' : wishes})
 
 def get_wishes(request):
     ret_root = {'data' : '', 'msg' : 'get fail', 'ret' : -1}

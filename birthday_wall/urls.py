@@ -19,9 +19,11 @@ from django.contrib import admin
 from django.conf import settings
 from django.conf.urls.static import static
 import wall_web.urls
+import fun_web.urls
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^happy/', include(wall_web.urls)),
+    url(r'^fun/', include(fun_web.urls)),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) \
   + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
