@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'wall_web',
+    'fun_web',
 ]
 
 MIDDLEWARE_CLASSES = [
