@@ -11,3 +11,6 @@ def index(request):
 
 def sleep(request):
     return render(request, 'fun_web/listen_scroll.html')
+
+def cool(request):
+    return render(request, 'fun_web/cool.html')
