@@ -8,3 +8,6 @@ from models import *
 # Create your views here.
 def index(request):
     return render(request, 'fun_web/index.html')
+
+def sleep(request):
+    return render(request, 'fun_web/listen_scroll.html')

@@ -3,4 +3,5 @@ from views import *
 
 urlpatterns = [
     url(r'^$', index),
+    url(r'^sleep$', sleep),
 ]
